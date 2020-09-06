@@ -1,0 +1,29 @@
+package com.ksh2.crypt;
+
+
+
+import java.security.KeyException;
+import java.security.Security;
+import java.security.Key;
+import java.security.KeyException;
+import java.io.IOException;
+
+public class BlowKey implements Key{
+    private String keyString;
+    static long serialVersionUID;
+    
+    public BlowKey(String key){
+        keyString=key;
+    }
+    
+    public byte[] getEncoded(){
+        return keyString.getBytes();
+    }
+    public String getFormat(){
+        return "Windows Default";
+    }
+    public String getAlgorithm(){
+        return "Blowfish";
+    }
+}
+
